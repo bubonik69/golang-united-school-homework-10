@@ -2,13 +2,13 @@ package main
 
 import (
 	"fmt"
+	"github.com/gorilla/mux"
+	_ "github.com/stretchr/testify/assert"
 	"io"
 	"log"
 	"net/http"
 	"os"
 	"strconv"
-	_"github.com/stretchr/testify/assert"
-	"github.com/gorilla/mux"
 )
 
 //METHOD	REQUEST	RESPONSE
@@ -32,6 +32,8 @@ func Start(host string, port int) {
 
 //main /** starts program, gets HOST:PORT param and calls Start func.
 func main() {
+	os.Setenv("HOST", "localhost")
+	os.Setenv("PORT", "8081")
 	host := os.Getenv("HOST")
 	port, err := strconv.Atoi(os.Getenv("PORT"))
 	if err != nil {
