@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"os"
 	"strconv"
-
+	_"github.com/stretchr/testify/assert"
 	"github.com/gorilla/mux"
 )
 
