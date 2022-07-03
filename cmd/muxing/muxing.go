@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"github.com/gorilla/mux"
-	_ "github.com/stretchr/testify/assert"
 	"io"
 	"log"
 	"net/http"
