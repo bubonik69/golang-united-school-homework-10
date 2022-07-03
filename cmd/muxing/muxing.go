@@ -10,6 +10,7 @@ import (
 
 	"github.com/gorilla/mux"
 )
+
 //METHOD	REQUEST	RESPONSE
 //+GET	/name/{PARAM}	body: Hello, PARAM!
 //+GET	/bad	Status: 500
@@ -63,13 +64,10 @@ func dataPage(w http.ResponseWriter, r *http.Request) {
 }
 
 func sumPage(w http.ResponseWriter, r *http.Request) {
-
-
-
 	h := r.Header
-	a:=h["A"]
-	b:=h["B"]
-	if a!=nil && b!=nil {
+	a := h["A"]
+	b := h["B"]
+	if a != nil && b != nil {
 		a_int, err := strconv.Atoi(a[0])
 		if err != nil {
 			w.WriteHeader(http.StatusBadRequest)
@@ -87,7 +85,3 @@ func sumPage(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
 	}
 }
-
-
-
-
